@@ -1,6 +1,7 @@
 const fetch= require('node-fetch');
+const globals = require('../globals.js')
 const forecast = async (latitude, longitude) => {
-    const forecastURL = `http://api.weatherstack.com/current?access_key=274195d851878ec49642b4604eafd46a&query=${latitude},${longitude}`
+    const forecastURL = `http://api.weatherstack.com/current?access_key=${globals.weatherStackKey}&query=${latitude},${longitude}`
     const response = await fetch(forecastURL);
     if (!response.ok) {
         throw new Error(response.statusText)

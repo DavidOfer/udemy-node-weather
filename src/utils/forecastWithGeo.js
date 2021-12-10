@@ -5,7 +5,6 @@ const forecastWithGeo = async (address) => {
     try {
         const geoResult = await geocode(address);
         const forecastResult = await forecast(geoResult.latitude, geoResult.longitude);
-        console.log(forecastResult);
         return {
             error: undefined, data: {
                 text: 'It is ' + forecastResult.current.temperature + ' degrees in '
