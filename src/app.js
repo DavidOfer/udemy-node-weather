@@ -6,7 +6,7 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
-//definte paths for express config
+
 const publicDirectioryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
@@ -16,7 +16,6 @@ const partialsPath = path.join(__dirname, '../templates/partials');
 app.set('views', viewsPath);
 app.set('view engine', 'hbs');
 hbs.registerPartials(partialsPath);
-
 
 //setup static directory to serve
 app.use(express.static(publicDirectioryPath));
